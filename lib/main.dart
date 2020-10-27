@@ -86,6 +86,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+
           //horizontal list view
           HorizontalListView(),
           Padding(
@@ -99,6 +100,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+
           //Grid View
           Container(
             height: 320.0,

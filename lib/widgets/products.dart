@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/product_details.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatefulWidget {
@@ -97,43 +98,53 @@ class SingleProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-        tag: product_name, child: Material(
-        child: InkWell(
-          onTap: () {},
-          child: GridTile(
-            footer: Container(
-              color: Colors.white70,
-              child: ListTile(
-                leading: Text(
-                  product_name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                title: Text(
-                    "\$$product_price",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w800,
-                    color: Colors.red,
-                  ),
-                ),
-                subtitle: Text(
-                  "\$$product_oldprice",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.lineThrough,
-                  ),
+        tag: product_name,
+        child: Material(
+          child: InkWell(
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ProductDetails(
+                  product_detail_name: product_name,
+                  product_detail_pic: product_pic,
+                  product_detail_oldprice: product_oldprice,
+                  product_detail_price: product_price,
                 ),
               ),
             ),
-            child: Image.asset(
+            child: GridTile(
+              footer: Container(
+                color: Colors.white60,
+                child: ListTile(
+                  leading: Text(
+                    product_name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  title: Text(
+                    "\$$product_price",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      color: Colors.red,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "\$$product_oldprice",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      decoration: TextDecoration.lineThrough,
+                    ),
+                  ),
+                ),
+              ),
+              child: Image.asset(
                 product_pic,
                 fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
-      ),
       ),
     );
   }
