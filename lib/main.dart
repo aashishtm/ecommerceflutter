@@ -1,3 +1,5 @@
+import 'dart:ui';
+import 'package:ecommerce/widgets/horizontal_listview.dart';
 import 'package:ecommerce/widgets/sidedrawer.dart';
 
 import 'package:flutter/material.dart';
@@ -49,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 2.0,
         backgroundColor: Colors.red,
         title: Text(
-          'T-Shirt Shop',
+          'Fashion Mart',
         ),
         actions: [
           IconButton(
@@ -69,7 +71,24 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: SideDrawer(),
-      body: image_carusel,
+      body: ListView(
+        children: [
+          image_carusel,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Categories',
+              style: TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+          //horizontal list view
+          HorizontalListView(),
+        ],
+      ),
     );
   }
 }
