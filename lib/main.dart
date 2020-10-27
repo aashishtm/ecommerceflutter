@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:ecommerce/widgets/horizontal_listview.dart';
+import 'package:ecommerce/widgets/products.dart';
 import 'package:ecommerce/widgets/sidedrawer.dart';
 
 import 'package:flutter/material.dart';
@@ -87,6 +88,22 @@ class _HomePageState extends State<HomePage> {
           ),
           //horizontal list view
           HorizontalListView(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Recent Products',
+              style: TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+          //Grid View
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
         ],
       ),
     );
