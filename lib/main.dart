@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
         dotColor: Colors.white,
+        dotBgColor: Colors.transparent,
         indicatorBgPadding: 5.0,
       ),
     );

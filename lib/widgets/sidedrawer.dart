@@ -58,9 +58,9 @@ class SideDrawer extends StatelessWidget {
           InkWell(
             onTap: () {},
             child: ListTile(
-              title: Text('Categories'),
+              title: Text('Shopping Cart'),
               leading: Icon(
-                Icons.dashboard,
+                Icons.shopping_cart,
                 color: Colors.red,
               ),
             ),
