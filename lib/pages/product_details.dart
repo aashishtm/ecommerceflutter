@@ -343,7 +343,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Divider(),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12,5,5,5.0),
+            padding: const EdgeInsets.fromLTRB(12, 5, 5, 5.0),
             child: Text(
               'Similar Product',
               style: TextStyle(
@@ -376,8 +376,9 @@ class _SimilarProductsState extends State<SimilarProducts> {
       "old_price": 120.0,
       "price": 85.0,
       "brand": "Zara",
-      "description":"this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
-      "condition":"New",
+      "description":
+          "this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
+      "condition": "New",
     },
     {
       "name": "Pants",
@@ -385,8 +386,9 @@ class _SimilarProductsState extends State<SimilarProducts> {
       "old_price": 120.0,
       "price": 85.0,
       "brand": "Zara",
-      "description":"this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
-      "condition":"New",
+      "description":
+          "this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
+      "condition": "New",
     },
     {
       "name": "Pink Skirt",
@@ -394,8 +396,9 @@ class _SimilarProductsState extends State<SimilarProducts> {
       "old_price": 120.0,
       "price": 85.0,
       "brand": "Zara",
-      "description":"this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
-      "condition":"New",
+      "description":
+          "this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
+      "condition": "New",
     },
     {
       "name": "Sport Shoes",
@@ -403,8 +406,9 @@ class _SimilarProductsState extends State<SimilarProducts> {
       "old_price": 120.0,
       "price": 85.0,
       "brand": "Zara",
-      "description":"this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
-      "condition":"New",
+      "description":
+          "this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list this is detail of the page from the list",
+      "condition": "New",
     },
   ];
 
@@ -413,7 +417,7 @@ class _SimilarProductsState extends State<SimilarProducts> {
     return GridView.builder(
       itemCount: similar_product_list.length,
       gridDelegate:
-      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext context, int index) {
         return SimilarSingleProduct(
           product_name: similar_product_list[index]['name'],
@@ -428,6 +432,7 @@ class _SimilarProductsState extends State<SimilarProducts> {
     );
   }
 }
+
 class SimilarSingleProduct extends StatelessWidget {
   final product_name;
   final product_pic;
@@ -439,12 +444,12 @@ class SimilarSingleProduct extends StatelessWidget {
 
   SimilarSingleProduct(
       {this.product_name,
-        this.product_pic,
-        this.product_oldprice,
-        this.product_price,
-        this.product_brand,
-        this.product_condition,
-        this.product_description});
+      this.product_pic,
+      this.product_oldprice,
+      this.product_price,
+      this.product_brand,
+      this.product_condition,
+      this.product_description});
 
   @override
   Widget build(BuildContext context) {

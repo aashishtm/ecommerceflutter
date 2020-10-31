@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/cart.dart';
 import 'package:flutter/material.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -56,7 +57,12 @@ class SideDrawer extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Cart()),
+              );
+            },
             child: ListTile(
               title: Text('Shopping Cart'),
               leading: Icon(

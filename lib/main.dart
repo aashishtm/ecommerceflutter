@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:ecommerce/pages/cart.dart';
 import 'package:ecommerce/widgets/horizontal_listview.dart';
 import 'package:ecommerce/widgets/products.dart';
 import 'package:ecommerce/widgets/sidedrawer.dart';
@@ -68,7 +69,9 @@ class _HomePageState extends State<HomePage> {
               Icons.shopping_cart,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+            },
           ),
         ],
       ),
