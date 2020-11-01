@@ -3,6 +3,7 @@ import 'package:ecommerce/pages/cart.dart';
 import 'package:ecommerce/widgets/horizontal_listview.dart';
 import 'package:ecommerce/widgets/products.dart';
 import 'package:ecommerce/widgets/sidedrawer.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -70,13 +71,14 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Cart()));
             },
           ),
         ],
       ),
       drawer: SideDrawer(),
-      body: ListView(
+      body: Column(
         children: [
           image_carusel,
           Padding(
@@ -106,10 +108,9 @@ class _HomePageState extends State<HomePage> {
           ),
 
           //Grid View
-          Container(
-            height: 320.0,
+          Flexible(
             child: Products(),
-          )
+          ),
         ],
       ),
     );

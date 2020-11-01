@@ -62,103 +62,103 @@ class SingleCartProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        leading: Image.asset(
-          productPic,
-        ),
-        title: Text(
-          productName,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.red,
+        child: ListTile(
+          leading: Image.asset(
+            productPic,
           ),
-        ),
-        subtitle: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "Size: $productSize",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    "Color: $productColor",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
+          title: Text(
+            productName,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.red,
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 0),
-              child: Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "\$$productPrice",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+          ),
+          subtitle: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Size: $productSize",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Color: $productColor",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 0),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "\$$productPrice",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
-        trailing: InkWell(
-          child: Text(
-            "$productQty",
+            ],
           ),
-          onTap: () {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  title: new Text(
-                    'Quantity',
-                  ),
-                  content: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      height: 150.0,
-                      child: Column(
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.arrow_drop_up),
-                            onPressed: (){},
-                          ),
-                          Text(
-                            "$productQty",
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.arrow_drop_down),
-                            onPressed: (){},
-                          ),
-                        ],
+          trailing: InkWell(
+            child: Text(
+              "$productQty",
+            ),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: new Text(
+                      'Quantity',
+                    ),
+                    content: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        height: 150.0,
+                        child: Column(
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.arrow_drop_up),
+                              onPressed: (){},
+                            ),
+                            Text(
+                              "$productQty",
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.arrow_drop_down),
+                              onPressed: (){},
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  actions: [
-                    MaterialButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(context);
-                      },
-                      child: Text(
-                        'Close',
-                      ),
-                    )
-                  ],
-                );
-              },
-            );
-          },
+                    actions: [
+                      MaterialButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(context);
+                        },
+                        child: Text(
+                          'Close',
+                        ),
+                      )
+                    ],
+                  );
+                },
+              );
+            },
+          ),
         ),
-      ),
     );
   }
 }

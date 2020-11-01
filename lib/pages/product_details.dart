@@ -453,56 +453,59 @@ class SimilarSingleProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Hero(
-        tag: product_name,
-        child: Material(
-          child: InkWell(
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ProductDetails(
-                  product_detail_name: product_name,
-                  product_detail_pic: product_pic,
-                  product_detail_oldprice: product_oldprice,
-                  product_detail_price: product_price,
-                  product_detail_brand: product_brand,
-                  product_detail_condition: product_condition,
-                  product_detail_description: product_description,
-                ),
-              ),
-            ),
-            child: GridTile(
-              footer: Container(
-                height: 35.0,
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          product_name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "\$$product_price",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Card(
+        child: Hero(
+          tag: product_name,
+          child: Material(
+            child: InkWell(
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProductDetails(
+                    product_detail_name: product_name,
+                    product_detail_pic: product_pic,
+                    product_detail_oldprice: product_oldprice,
+                    product_detail_price: product_price,
+                    product_detail_brand: product_brand,
+                    product_detail_condition: product_condition,
+                    product_detail_description: product_description,
                   ),
                 ),
               ),
-              child: Image.asset(
-                product_pic,
-                fit: BoxFit.cover,
+              child: GridTile(
+                footer: Container(
+                  height: 35.0,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            product_name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "\$$product_price",
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                child: Image.asset(
+                  product_pic,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
